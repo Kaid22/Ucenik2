@@ -26,13 +26,22 @@ namespace Ucenik2
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {           
+        {       
+            if(Convert.ToDouble(textBox2.Text)>=1 && Convert.ToInt32(textBox2.Text) <= 5)
+            {
                 Ucenik u = new Ucenik();
                 u.Imeprezime = textBox1.Text;
                 u.Prosek = Convert.ToInt32(textBox2.Text);
                 textBox1.Clear();
                 textBox2.Clear();
                 o.dodajucenikanaspisak = u;
+            }
+            else
+            {
+                MessageBox.Show("Prosek mora biti izmedju 1 i 5");
+
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
